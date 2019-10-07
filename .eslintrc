@@ -1,0 +1,14 @@
+{
+  "env": {
+    "jest/globals": true
+  },
+  "extends": [
+    "./index.js",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "prettier", "jest"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
