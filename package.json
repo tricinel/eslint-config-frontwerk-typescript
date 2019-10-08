@@ -15,7 +15,7 @@
   "scripts": {
     "prelint": "eclint check * rules/*",
     "lint": "eslint --report-unused-disable-directives rules/*.js",
-    "format": "prettier --write \"./rules/*.js\" \".index.js\"",
+    "format": "prettier --write \"./rules/*.js\" \"./index.js\" \"./no-type-checking.js\"",
     "prepublishOnly": "eslint-find-rules --unused",
     "test": "jest",
     "demo": "eslint demo.ts"
