@@ -38,7 +38,8 @@ yarn add --dev eslint-config-frontwerk-typescript @typescript-eslint/{eslint-plu
 
 ## Related
 
-`eslint-config-frontwerk-typescript` is based on the ESLint rules defined in [eslint-config-frontwerk][eslint-config-frontwerk].
+- `eslint-config-frontwerk-typescript` is based on the ESLint rules defined in [eslint-config-frontwerk][eslint-config-frontwerk].
+- If you're using [ReactJS][reactjs], check out [eslint-config-frontwerk-react][eslint-config-frontwerk-react].
 
 ## Contributing
 
@@ -61,3 +62,5 @@ MIT
 [npm-downloads-badge]: https://img.shields.io/npm/dt/eslint-config-frontwerk-typescript.svg?style=flat-square
 [contributing]: ./Contributing.md
 [eslint-config-frontwerk]: https://github.com/tricinel/eslint-config-frontwerk
+[reactjs]: https://reactjs.org/
+[eslint-config-frontwerk-react]: https://github.com/tricinel/eslint-config-frontwerk-react
