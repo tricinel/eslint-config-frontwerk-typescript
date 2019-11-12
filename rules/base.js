@@ -184,7 +184,13 @@ module.exports = {
 
     // Disallow the use of type aliases in favor of interfaces and simplified types
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-type-alias.md
-    '@typescript-eslint/no-type-alias': 'error',
+    '@typescript-eslint/no-type-alias': [
+      'error',
+      {
+        allowTupleTypes: 'always',
+        allowAliases: 'in-unions-and-intersections'
+      }
+    ],
 
     // Disallow the use of variables that are declared and not used anywhere in the code
     // Overrides the ESLint rule
