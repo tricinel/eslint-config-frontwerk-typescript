@@ -45,7 +45,10 @@ module.exports = {
 
     // Disallow any expression that always evaluates to truthy or always evaluates to falsy
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
-    '@typescript-eslint/no-unnecessary-condition': 'error',
+    '@typescript-eslint/no-unnecessary-condition': [
+      'error',
+      { ignoreRhs: true }
+    ],
 
     // Disallow unnecessary namespace qualifiers
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-qualifier.md
@@ -73,6 +76,9 @@ module.exports = {
 
     // Require that any boolean expression is limited to true booleans rather than casting another primitive to a boolean at runtime
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
-    '@typescript-eslint/strict-boolean-expressions': 'error'
+    '@typescript-eslint/strict-boolean-expressions': [
+      'error',
+      { ignoreRhs: true }
+    ]
   }
 };
