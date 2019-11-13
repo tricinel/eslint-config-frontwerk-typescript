@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-frontwerk-typescript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Frontwerk's ESLint config with Typescript support",
   "main": "index.js",
   "repository": {
