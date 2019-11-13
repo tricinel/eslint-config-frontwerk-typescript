@@ -188,6 +188,7 @@ module.exports = {
       'error',
       {
         allowTupleTypes: 'always',
+        allowMappedTypes: 'always',
         allowAliases: 'in-unions-and-intersections'
       }
     ],
