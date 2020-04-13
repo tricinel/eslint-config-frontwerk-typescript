@@ -27,7 +27,17 @@ module.exports = {
         // This is already checked by Typescript.
         'no-redeclare': 'off',
         // This is already checked by Typescript.
-        'comma-spacing': 'off'
+        'comma-spacing': 'off',
+        'import/extensions': [
+          'error',
+          'ignorePackages',
+          {
+            js: 'never',
+            jsx: 'never',
+            ts: 'never',
+            tsx: 'never'
+          }
+        ]
       }
     }
   ]
