@@ -25,7 +25,9 @@ module.exports = {
         // This is already checked by Typescript.
         'no-dupe-class-members': 'off',
         // This is already checked by Typescript.
-        'no-redeclare': 'off'
+        'no-redeclare': 'off',
+        // This is already checked by Typescript.
+        'comma-spacing': 'off'
       }
     }
   ]
