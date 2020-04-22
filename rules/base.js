@@ -369,8 +369,9 @@ module.exports = {
     '@typescript-eslint/prefer-optional-chain': 'error',
 
     // Prefer that function parameters are typed as readonly to prevent accidental mutation of inputs
+    // We should leave this to the developer to decide
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly-parameter-types.md
-    '@typescript-eslint/prefer-readonly-parameter-types': 'warn',
+    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
 
     // Enforce template literal expressions to be of string type (allow numbers)
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md
