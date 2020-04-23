@@ -1,3 +1,10 @@
+### v1.1.0
+
+---
+
+- Add a strict rule set that includes the unsafe-rules
+- Separate the unsafe-rules into their own rule set
+
 ### v1.0.3
 
 ---

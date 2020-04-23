@@ -18,5 +18,11 @@
     "declaration": false,
     "declarationMap": false
   },
-  "include": ["rules/*.js", "index.js", "no-type-checking.js", "__tests__/*.js"]
+  "include": [
+    "rules/*.js",
+    "index.js",
+    "strict.js",
+    "no-type-checking.js",
+    "__tests__/*.js"
+  ]
 }

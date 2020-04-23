@@ -34,7 +34,8 @@ yarn add --dev eslint-config-frontwerk-typescript @typescript-eslint/{eslint-plu
 > }
 > ```
 
-- A config without the TypeScript rules that require type checking. Add `"extends": "frontwerk-typescript/no-type-checking"` to your `.eslintrc`.
+- A config **without** the TypeScript rules that require type checking. Add `"extends": "frontwerk-typescript/no-type-checking"` to your `.eslintrc`.
+- A config **with** the TypeScript rules that are stricter. Add `"extends": "frontwerk-typescript/strict"` to your `.eslintrc`.
 
 ## Related
 
