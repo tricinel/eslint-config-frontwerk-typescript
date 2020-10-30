@@ -39,19 +39,9 @@ module.exports = {
     'brace-style': 'off',
     '@typescript-eslint/brace-style': ['error', '1tbs'],
 
-    // Enforce naming of variables and properties to be camelCased
-    // Overrides the ESLint rule
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/camelcase.md
-    camelcase: 'off',
-    '@typescript-eslint/camelcase': 'error',
-
     // Prefer that literals exposed by classes are done using the readonly fields and not getters
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-literal-property-style.md
     '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
-
-    // Enforce PascalCased names for classes and interfaces
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-name-casing.md
-    '@typescript-eslint/class-name-casing': 'error',
 
     // Require a space after a comma and not before it, in variable declarations, array/object literals, function parameters, etc.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md
@@ -435,6 +425,114 @@ module.exports = {
 
     // Warn if any two overloads could be unified into one by using a union or an optional/rest parameter
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
-    '@typescript-eslint/unified-signatures': 'warn'
+    '@typescript-eslint/unified-signatures': 'warn',
+
+    // Bans // tslint:<rule-flag> comments from being used
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-tslint-comment.md
+    '@typescript-eslint/ban-tslint-comment': 'error',
+
+    // Bans trailing comma
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-dangle.md
+    '@typescript-eslint/comma-dangle': ['error'],
+
+    // Require using the built-in type Record to create an empty object defining only an index signature
+    // e.g. `type Foo = { [key: string]: number }` is equivalent to `type Foo = Record<string, number>`
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-indexed-object-style.md
+    '@typescript-eslint/consistent-indexed-object-style': ['error', 'record'],
+
+    // Enforces consistent usage of type imports
+    // e.g. `type Foo = { [key: string]: number }` is equivalent to `type Foo = Record<string, number>`
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { prefer: 'type-imports' }
+    ],
+
+    // Variables don't need to be initialised at definition
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/init-declarations.md
+    '@typescript-eslint/init-declarations': ['off'],
+
+    // Enforce consistent spacing around keywords and keyword-like tokens
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md
+    '@typescript-eslint/keyword-spacing': [
+      'error',
+      {
+        before: true,
+        after: true,
+        overrides: {
+          return: { after: true },
+          throw: { after: true },
+          case: { after: true }
+        }
+      }
+    ],
+
+    // Always require an empty line between class members
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md
+    '@typescript-eslint/lines-between-class-members': ['error', 'always'],
+
+    // Disallow non-null assertion in locations that may be confusing
+    // e.g. `a! == b` or `a! === b`
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-non-null-assertion.md
+    '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+
+    // Require that all imports from a single module exists in a single import statement
+    // This is disabled because it's handled with eslint-plugin-import (https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-duplicate-imports.md
+    '@typescript-eslint/no-duplicate-imports': 'off',
+
+    // Disallow the usage of this keywords outside of classes or class-like objects
+    // This rule applies only in strict mode
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-this.md
+    '@typescript-eslint/no-invalid-this': 'error',
+
+    // Disallows usage of void type outside of generic or return types
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-void-type.md
+    '@typescript-eslint/no-invalid-void-type': 'off',
+
+    // Disallow writing functions within loops
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md
+    '@typescript-eslint/no-loop-func': 'error',
+
+    // Disallow the use of number literals that immediately lose precision at runtime when converted to a JS Number due to 64-bit floating-point rounding
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loss-of-precision.md
+    '@typescript-eslint/no-loss-of-precision': 'error',
+
+    // Disallow variables that have multiple declarations in the same scope
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-redeclare.md
+    '@typescript-eslint/no-redeclare': 'error',
+
+    // Eliminate shadowed variable declarations
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md
+    '@typescript-eslint/no-shadow': [
+      'error',
+      {
+        builtinGlobals: true,
+        ignoreTypeValueShadow: true,
+        ignoreFunctionTypeParameterNameValueShadow: true
+      }
+    ],
+
+    // Prefer using @ts-expect-error over @ts-ignore
+    // Added in TypeScript 3.9
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-ts-expect-error.md
+    '@typescript-eslint/prefer-ts-expect-error': 'warn',
+
+    // Require spaces around infix operators
+    // foo+bar //not ok
+    // foo + bar //ok
+    // var foo = bar|0 // also ok
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-infix-ops.md
+    '@typescript-eslint/space-infix-ops': ['error', { int32Hint: true }]
   }
 };

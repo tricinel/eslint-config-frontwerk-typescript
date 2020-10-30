@@ -45,10 +45,7 @@ module.exports = {
 
     // Disallow any expression that always evaluates to truthy or always evaluates to falsy
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
-    '@typescript-eslint/no-unnecessary-condition': [
-      'error',
-      { ignoreRhs: true }
-    ],
+    '@typescript-eslint/no-unnecessary-condition': 'error',
 
     // Disallow unnecessary namespace qualifiers
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-qualifier.md
@@ -76,9 +73,39 @@ module.exports = {
 
     // Require that any boolean expression is limited to true booleans rather than casting another primitive to a boolean at runtime
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
-    '@typescript-eslint/strict-boolean-expressions': [
+    '@typescript-eslint/strict-boolean-expressions': 'error',
+
+    // Require dot notation whenever possible
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
+    '@typescript-eslint/dot-notation': 'error',
+
+    // Disallow usage of the implicit any type in catch clauses
+    // Added in TypeScript 4.0
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implicit-any-catch.md
+    '@typescript-eslint/no-implicit-any-catch': [
       'error',
-      { ignoreRhs: true }
-    ]
+      { allowExplicitAny: true }
+    ],
+
+    // Disallows unnecessary constraints on generic types
+    // e.g. `interface FooAny<T extends any> {}`
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-type-constraint.md
+    '@typescript-eslint/no-unnecessary-type-constraint': 'error',
+
+    // Enforce explicitly initializing enums member values
+    // By implicitly defining values, enums can lead to unexpected bugs if it's modified without paying attention to the order of its items
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-enum-initializers.md
+    '@typescript-eslint/prefer-enum-initializers': 'error',
+
+    // Require that all enum members be literal values to prevent unintended enum member name shadow issues
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-literal-enum-member.md
+    '@typescript-eslint/prefer-literal-enum-member': 'error',
+
+    // Prefer using type parameter when calling Array#reduce instead of casting
+    // e.g. `[1, 2, 3].reduce((arr, num) => arr.concat(num * 2), [] as number[]);` is invalid
+    // e.g. `[1, 2, 3].reduce<number[]>((arr, num) => arr.concat(num * 2), []);` is valid
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-reduce-type-parameter.md
+    '@typescript-eslint/prefer-reduce-type-parameter': 'error'
   }
 };

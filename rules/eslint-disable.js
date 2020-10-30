@@ -22,12 +22,21 @@ module.exports = {
         'no-this-before-super': 'off',
         // This is checked by Typescript using the option `strictNullChecks`.
         'no-undef': 'off',
-        // This is already checked by Typescript.
+        // The following are already checked by Typescript.
         'no-dupe-class-members': 'off',
-        // This is already checked by Typescript.
         'no-redeclare': 'off',
-        // This is already checked by Typescript.
         'comma-spacing': 'off',
+        'comma-dangle': 'off',
+        'dot-notation': 'off',
+        'init-declarations': 'off',
+        'keyword-spacing': 'off',
+        'lines-between-class-members': 'off',
+        'no-duplicate-imports': 'off',
+        'no-invalid-this': 'off',
+        'no-loop-func': 'off',
+        'no-loss-of-precision': 'off',
+        'no-shadow': 'off',
+        'space-infix-ops': 'off',
         'import/extensions': [
           'error',
           'ignorePackages',
