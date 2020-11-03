@@ -1,3 +1,11 @@
+### v1.2.1
+
+---
+
+- Allow callbacks in type aliases
+- Enforce a space after the colon, but not before it. And a space both before and after the fat arrow
+- Add instructions for `plugin:import/typescript` to extends in Readme
+
 ### v1.2.0
 
 ---

@@ -27,7 +27,7 @@ yarn add --dev eslint-config-frontwerk-typescript @typescript-eslint/{eslint-plu
 
 > ```
 > {
->   "extends": "frontwerk-typescript",
+>   "extends": ["frontwerk-typescript", "plugin:import/typescript"],
 >   "parserOptions": {
 >      "project": "./tsconfig.json"
 >    },

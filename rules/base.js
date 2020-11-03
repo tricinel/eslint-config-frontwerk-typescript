@@ -277,7 +277,8 @@ module.exports = {
       {
         allowTupleTypes: 'always',
         allowMappedTypes: 'always',
-        allowAliases: 'in-unions-and-intersections'
+        allowAliases: 'in-unions-and-intersections',
+        allowCallbacks: 'always'
       }
     ],
 
@@ -413,10 +414,23 @@ module.exports = {
     ],
 
     // Require a space after the colon in type annotations and no spaces before it
+    // Require a space before and after the =>
+    // e.g. let foo: string; // ok
+    // e.g. let foo : string; let bar :string; let baz:string; // not ok
+    // e.g. let foo: () => string; // ok
+    // e.g. let foo: ()=> string; let bar: () =>string; let baz: ()=>string; // not ok
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/type-annotation-spacing.md
     '@typescript-eslint/type-annotation-spacing': [
       'error',
-      { before: false, after: true }
+      {
+        before: true,
+        after: true,
+        overrides: {
+          colon: {
+            before: false
+          }
+        }
+      }
     ],
 
     // Don't require type annotations to exist, let's leave this to the compiler
