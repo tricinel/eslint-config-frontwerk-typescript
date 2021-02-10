@@ -23,6 +23,8 @@ module.exports = {
         // This is checked by Typescript using the option `strictNullChecks`.
         'no-undef': 'off',
         // The following are already checked by Typescript.
+        'no-use-before-define': 'off',
+        'no-unused-vars': 'off',
         'no-dupe-class-members': 'off',
         'no-redeclare': 'off',
         'comma-spacing': 'off',
@@ -36,6 +38,7 @@ module.exports = {
         'no-loop-func': 'off',
         'no-loss-of-precision': 'off',
         'no-shadow': 'off',
+        'object-curly-spacing': 'off',
         'space-infix-ops': 'off',
         'import/extensions': [
           'error',

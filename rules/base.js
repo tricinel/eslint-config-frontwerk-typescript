@@ -302,7 +302,6 @@ module.exports = {
     // Disallow the use of variables that are declared and not used anywhere in the code
     // Overrides the ESLint rule
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
-    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars-experimental': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
@@ -317,7 +316,6 @@ module.exports = {
     // Disallow the use of variables before they are defined
     // Overrides the ESLint rule
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md
-    'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': [
       'error',
       { functions: false, classes: true, variables: true, typedefs: true }
@@ -332,6 +330,17 @@ module.exports = {
     // Disallow the use of require statements except in import statements
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-var-requires.md
     '@typescript-eslint/no-var-requires': 'error',
+
+    // Prefers a non-null assertion over explicit type cast when possible
+    // e.g.const ignoreUndefinedAndNull: string = maybeString as string;
+    // Instead: const ignoreUndefinedAndNull: string = maybeString!;
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/non-nullable-type-assertion-style.md
+    '@typescript-eslint/non-nullable-type-assertion-style': 'error',
+
+    // Enforce consistent spacing inside braces
+    // Overrides the ESLint rule
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/object-curly-spacing.md
+    '@typescript-eslint/object-curly-spacing': ['error'],
 
     // Prefer usage of as const over literal type
     // Enable this if you're using TypeScript < 3.4
@@ -493,6 +502,16 @@ module.exports = {
     // e.g. `a! == b` or `a! === b`
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-non-null-assertion.md
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+
+    // Always require expressions of type void to appear in statement position
+    // Returning the results of an expression whose type is void can be misleading
+    // e.g. with `promise.then(value => window.postMessage(value))` it's not obvious whether the chained promise will contain the response
+    // Instead, we can  do `promise.then(value => void window.postMessage(value))` to make it obvious nothing is returned
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-void-expression.md
+    '@typescript-eslint/no-confusing-void-expression': [
+      'error',
+      { ignoreVoidOperator: true }
+    ],
 
     // Require that all imports from a single module exists in a single import statement
     // This is disabled because it's handled with eslint-plugin-import (https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md

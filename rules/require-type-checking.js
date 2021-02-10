@@ -106,6 +106,10 @@ module.exports = {
     // e.g. `[1, 2, 3].reduce((arr, num) => arr.concat(num * 2), [] as number[]);` is invalid
     // e.g. `[1, 2, 3].reduce<number[]>((arr, num) => arr.concat(num * 2), []);` is valid
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-reduce-type-parameter.md
-    '@typescript-eslint/prefer-reduce-type-parameter': 'error'
+    '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+
+    // Don't worry about sorting the members of a type union/intersection alphabetically
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/sort-type-union-intersection-members.md
+    '@typescript-eslint/sort-type-union-intersection-members': 'off'
   }
 };

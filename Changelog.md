@@ -1,3 +1,9 @@
+### v1.2.2
+
+---
+
+- Add rules: `no-confusing-void-expression`, `non-nullable-type-assertion-style`, `object-curly-spacing` and `sort-type-union-intersection-members`
+
 ### v1.2.1
 
 ---
